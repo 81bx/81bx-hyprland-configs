@@ -18,7 +18,7 @@ waybar
 
 brightnessctl (for laptops) 
 
-More packages is on the [packages.sh file](https://github.com/0xf19/0xf19-hyprland-configs/blob/main/packages.sh)
+More packages is on the [packages.sh file](https://github.com/81bx/81bx-hyprland-configs/blob/main/packages.sh)
 
 USED FOR HYPRLAND 0.55+!!!
 
@@ -37,10 +37,10 @@ Log in on CLI
 And type these commands:
 
 
-`git clone https://github.com/0xf19/0xf19-hyprland-configs`
+`git clone https://github.com/81bx/81bx-hyprland-configs`
 
 
-`cd 0xf19-hyprland-configs`
+`cd 81bx-hyprland-configs`
 
 
 `cd .config/hypr`
