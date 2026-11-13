@@ -1,4 +1,4 @@
-# Packages needed:
+### Packages needed:
 
 
 hyprland
@@ -20,13 +20,12 @@ brightnessctl (for laptops)
 
 More packages is on the [packages.sh file](https://github.com/81bx/81bx-hyprland-configs/blob/main/packages.sh)
 
-Waybar config setup: https://github.com/81bx/81bx-waybar-configs/tree/main#
-
+Waybar config setup:
 USED FOR HYPRLAND 0.55+!!!
 
 ------
 
-# Howto?:
+### Howto?:
 
 NOTE: No need to press `Ctrl + Alt + F4`, Open terminal is way recommended :3
 
@@ -52,3 +51,14 @@ And type these commands:
 
 
 Once done, ~~type `reboot` to restart the system~~ Theres no need to **restart the system**. just press `Ctrl + Alt + F1`.
+
+------
+
+81bx's Waybar config:
+
+
+`git clone https://github.com/81bx/81bx-waybar-configs`
+
+`cd 81bx-waybar-configs`
+
+`cp -r .config $HOME`
