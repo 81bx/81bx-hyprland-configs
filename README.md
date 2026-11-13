@@ -49,10 +49,4 @@ And type these commands:
 `cp hyprland.lua $HOME/.config/hypr/`
 
 
-`cp hyprpaper.conf $HOME/.config/hypr/`
-
-
-`cp wallpaper.png $HOME/.config/hypr/`
-
-
 Once done, ~~type `reboot` to restart the system~~ Theres no need to **restart the system**. just press `Ctrl + Alt + F1`.
