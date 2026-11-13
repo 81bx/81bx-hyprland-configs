@@ -35,14 +35,15 @@ local menu        = "hyprlauncher"
 --   hl.exec_cmd("waybar & hyprpaper & firefox")
 -- end)
 
--- 9hsas's autostart
+-- 81bx's autostart
 
 hl.on("hyprland.start", function ()
-hl.exec_cmd("systemctl --user start hyprpolkitagent")
-hl.exec_cmd("systemctl --user start xdg-desktop-portal-hyprland")
-hl.exec_cmd("systemctl --user start xdg-desktop-portal")
+hl.exec_cmd("waybar & awww-daemon")
+hl.exec_cmd("systemctl --user start hyprpolkitagent") -- DEPENDS ON YOUR SYSTEM INIT
+hl.exec_cmd("systemctl --user start xdg-desktop-portal-hyprland") -- DEPENDS ON YOUR SYSTEM INIT
+hl.exec_cmd("systemctl --user start xdg-desktop-portal") -- DEPENDS ON YOUR SYSTEM INIT
 hl.exec_cmd("nm-applet")
-hl.exec_cmd("waybar & hyprpaper")
+hl.exec_cmd("blueman-applet") 
 end)
 
 -------------------------------
@@ -251,10 +252,10 @@ hl.device({
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
-local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
+-- hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
+-- local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+-- hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
@@ -300,36 +301,52 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = tr
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
--- 81bx's keybinds
+---------------------
+-- 81bx's keybinds --
+---------------------
 
--- BROWSERS --
+-----------------------------------------
+-- BROWSERS (if you have it installed)--
+-----------------------------------------
+
+-- USEFUL THINGS --
+
+hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
+local closeWindowBind = hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.window.close())
+-- closeWindowBind:set_enabled(false)
+hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output -o $HOME/Hyprshot")) -- Screenshot
+-- hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("pkill hyprpaper && hyprpaper")) -- Taskkill and restart hyprpaper (Legacy) 
+-- hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("hyprpaper")) -- Changes wallpaper without pkill (Old and now disabled)
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu)) -- Windows + R is back
+
+-----------------------------------------------------------
+-- BRIGHTNESS FOR LAPTOPS -- 
+-- This is my keybind of my laptop (ASUS TUF Gaming A15) --
+-- If you got diffenct model, you can change it --
+-----------------------------------------------------------
+
+-- hl.bind(mainMod .. " + F7", hl.dsp.exec_cmd("brightnessctl set 5%-")) -- Control Laptop Brightness
+-- hl.bind(mainMod .. " + F8", hl.dsp.exec_cmd("brightnessctl set 5%+")) -- Control Laptop Brightness
+
+-----------------------------------------
+-- BROWSERS (if you have it installed)--
+-----------------------------------------
 
 -- Firefox:
-hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("firefox"))
+hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("firefox")) -- Enabled on default
 
--- LibreWolf (Firefox) [Main]
+-- LibreWolf
 -- hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("librewolf"))
 
--- Brave (Chromium)
+-- Brave
 -- hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("brave"))
 
 -- Chromium
 -- hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("chromium"))
 
--- USEFUL THINGS --
-
-hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output -o $HOME/Hyprshot")) -- Screenshot
--- hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("pkill hyprpaper && hyprpaper")) -- Taskkill and restart hyprpaper (Legacy) 
-hl.bind(mainMod .. " + U", hl.dsp.exec_cmd("hyprpaper")) -- Changes wallpaper without pkill
-hl.bind(mainMod .. " + SUPER_L", hl.dsp.exec_cmd(menu)) -- Opens menu without having pressing Windows + R
-hl.bind(mainMod .. " + SUPER_R", hl.dsp.exec_cmd(menu)) -- Opens menu without having pressing Windows + R
-
--- BRIGHTNESS FOR LAPTOPS -- 
--- This is my keybind of my laptop (ASUS TUF Gaming A15) --
--- If you got diffenct model, you can change it --
-
--- hl.bind(mainMod .. " + F7", hl.dsp.exec_cmd("brightnessctl set 5%-")) -- Control Laptop Brightness
--- hl.bind(mainMod .. " + F8", hl.dsp.exec_cmd("brightnessctl set 5%+")) -- Control Laptop Brightness
+-- Zen Browser
+-- hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("zen-browser"))
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
