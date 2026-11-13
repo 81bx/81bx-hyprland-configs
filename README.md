@@ -10,7 +10,7 @@ hyprshot
 hyprlauncher
 
 
-hyprpaper
+waypaper
 
 
 waybar
