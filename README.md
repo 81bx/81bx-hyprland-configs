@@ -54,7 +54,7 @@ Once done, ~~type `reboot` to restart the system~~ Theres no need to **restart t
 
 ------
 
-81bx's Waybar config:
+### 81bx's Waybar config:
 
 
 `git clone https://github.com/81bx/81bx-waybar-configs`
