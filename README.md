@@ -20,6 +20,8 @@ brightnessctl (for laptops)
 
 More packages is on the [packages.sh file](https://github.com/81bx/81bx-hyprland-configs/blob/main/packages.sh)
 
+Waybar config setup: https://github.com/81bx/81bx-waybar-configs/tree/main#
+
 USED FOR HYPRLAND 0.55+!!!
 
 ------
